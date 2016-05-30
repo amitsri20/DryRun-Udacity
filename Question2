@@ -1,0 +1,8 @@
+•	In opening a map from an app following steps are involved:
+To launch Google Maps with an intent we must first create an Intent object, specifying its action, URI and package.
+o	All Google Maps intents are called as a View action — ACTION_VIEW.
+o	Google Maps intents use URI encoded strings (address, city, state, and ZIP code in encoded format) that specify a desired action, along with some data with which to perform the action.
+o	Calling setPackage("com.google.android.apps.maps") will ensure that the Google Maps app for Android handles the Intent. If the package isn't set, the system will determine which apps can handle the Intent. If multiple apps are available, the user may be asked which app they would like to use.
+•	After creating the Intent using Action, URI and package information, we can request that the system launch map app. A common method for launching map is to pass the Intent to the startActivity() method. 
+
+NOTE: To verify that map app is available to receive the intent, we should call resolveActivity() on our Intent object. If the result is non-null, there is at least one app that can handle the intent and it's safe to call startActivity().

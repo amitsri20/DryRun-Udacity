@@ -6,3 +6,8 @@ Every Android-compatible device supports a shared "external storage" that we can
 4.)	A Network Connection: We can use the network (when it's available) to store and retrieve data on your own web-based services. To do network operations, we use classes in the following packages:
 java.net.*
 android.net.*
+
+## Implementing Databases:
+The recommended method to create a new SQLite database is to create a subclass of SQLiteOpenHelper and override the onCreate() method, in which we can execute a SQLite command to create tables in the database.
+We can then get an instance of your SQLiteOpenHelper implementation using the constructor we defined. To write to and read from the database, we have to call getWritableDatabase() and getReadableDatabase(), respectively. These both return a SQLiteDatabase object that represents the database and provides methods for SQLite operations. We can execute SQLite queries using the SQLiteDatabase query() methods, which accept various query parameters, such as the table to query, the projection, selection, columns, grouping, and others.
+Every SQLite query will return a Cursor that points to all the rows found by the query. The Cursor is always the mechanism with which we can navigate results from a database query and read rows and columns.

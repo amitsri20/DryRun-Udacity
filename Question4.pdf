@@ -1,0 +1,8 @@
+The four different options for saving data are as follows:
+1.)	Shared Preferences: It provides a general framework that allows us to save and retrieve persistent key-value pairs of primitive data types. We can use SharedPreferences to save any primitive data: booleans, floats, ints, longs, and strings. This data will persist across user sessions (even if your application is killed).
+2.)	Internal/External Storage: We can save files directly on the device's internal storage. By default, files saved to the internal storage are private to the application and other applications cannot access them (nor can the user). When the user uninstalls the application, these files are removed.
+Every Android-compatible device supports a shared "external storage" that we can use to save files. This can be a removable storage media (such as an SD card) or an internal (non-removable) storage. Files saved to the external storage are world-readable and can be modified by the user when they enable USB mass storage to transfer files on a computer.
+3.)	Using Databases: Android provides full support for SQLite databases. Any databases we create will be accessible by name to any class in the application, but not outside the application.
+4.)	A Network Connection: We can use the network (when it's available) to store and retrieve data on your own web-based services. To do network operations, we use classes in the following packages:
+java.net.*
+android.net.*
